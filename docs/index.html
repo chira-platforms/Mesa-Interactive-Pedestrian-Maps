@@ -46,7 +46,7 @@
 }
 
 .ui-panel.hidden {
-  display: none;
+  display: none !important;
 }
     </style>
 
@@ -97,7 +97,7 @@ html, body { height:100%; margin:0; padding:0; overflow:hidden; }
 <body>
     
     
-    <div style="
+    <div class="ui-panel" style="
         position: fixed;
         top: 20px; left: 20px; width: 360px; z-index:9999;
         background-color: rgba(255,255,255,0.95);
@@ -118,7 +118,7 @@ html, body { height:100%; margin:0; padding:0; overflow:hidden; }
     </div>
     
     
-    <div style="
+    <div class="ui-panel" style="
         position: fixed;
         bottom: 25px; left: 20px; width: 320px; z-index:9999;
         background-color: rgba(255,255,255,0.95); padding: 12px; border: 2px solid #444;
