@@ -48,6 +48,9 @@
 #ui.hidden {
   display: none;
 }
+.ui-panel.hidden {
+  display: none;
+}
     </style>
 
     
@@ -141,7 +144,7 @@ html, body { height:100%; margin:0; padding:0; overflow:hidden; }
 <div id="ui">
 
   <!-- TOP PANEL -->
-  <div class="panel panel-left-top">
+  <div class="panel panel-left-top ui-panel">
     <div class="panel-title">
       <div>
         <div class="h1">Mesa Pedestrian Risk Map</div>
@@ -165,7 +168,7 @@ html, body { height:100%; margin:0; padding:0; overflow:hidden; }
   </div>
 
   <!-- BOTTOM LEGEND -->
-  <div class="panel panel-left-bottom">
+  <div class="panel panel-left-bottom ui-panel">
     <div class="h2">Legend</div>
     <div class="legend-row"><span class="dot low"></span> Low</div>
     <div class="legend-row"><span class="dot typical"></span> Typical</div>
@@ -196,10 +199,15 @@ L.control.zoom({ position: "bottomright" })
   .addTo(map_ab459e368b79022add95f43adc28de68);
 // ALL your Leaflet code continues here...
 document.getElementById("toggleUI").onclick = function () {
-    const ui = document.getElementById("ui");
-    ui.classList.toggle("hidden");
+  const panels = document.querySelectorAll(".ui-panel");
 
-    this.innerText = ui.classList.contains("hidden") ? "Show UI" : "Hide UI";
+  panels.forEach(panel => {
+    panel.classList.toggle("hidden");
+  });
+
+  const isHidden = panels[0].classList.contains("hidden");
+
+  this.innerText = isHidden ? "Show UI" : "Hide UI";
 };
             
 
