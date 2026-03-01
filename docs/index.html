@@ -8051,17 +8051,28 @@ document.getElementById("toggleUI").onclick = function () {
     
             heat_map_c39cbeb1b19dcd544a97c01242982912.addTo(feature_group_227dbeed31518fcb399838625c144f4f);
     
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("toggleUI");
 
-        document.getElementById("toggleUI").onclick = function () {
-  const ui = document.getElementById("ui");
+  if (!btn) {
+    console.log("Toggle button not found");
+    return;
+  }
 
-  ui.classList.toggle("hidden");
+  btn.addEventListener("click", function () {
+    const panels = document.querySelectorAll(".ui-panel");
 
-  this.innerText = ui.classList.contains("hidden")
-    ? "Show UI"
-    : "Hide UI";
-};
-    
+    const hiding = btn.innerText.trim() === "Hide UI";
+
+    panels.forEach(panel => {
+      panel.classList.toggle("hidden", hiding);
+    });
+
+    btn.innerText = hiding ? "Show UI" : "Hide UI";
+  });
+});
 </script>
+
 </body>
 </html>
