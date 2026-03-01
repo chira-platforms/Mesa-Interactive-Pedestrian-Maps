@@ -35,7 +35,8 @@
     #toggleUI {
   position: fixed;
   top: 10px;
-  right: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2000;
   padding: 8px 12px;
   background: white;
@@ -136,10 +137,12 @@ html, body { height:100%; margin:0; padding:0; overflow:hidden; }
     </div>
     
     
-            <div id="ui">
+           <!-- UI WRAPPER -->
+<div id="ui">
+
+  <!-- TOP PANEL -->
   <div class="panel panel-left-top">
     <div class="panel-title">
-      <div class="brand-badge"></div>
       <div>
         <div class="h1">Mesa Pedestrian Risk Map</div>
         <div class="sub">2020–2024 • Relative Risk Index (RRI)</div>
@@ -161,6 +164,7 @@ html, body { height:100%; margin:0; padding:0; overflow:hidden; }
     </div>
   </div>
 
+  <!-- BOTTOM LEGEND -->
   <div class="panel panel-left-bottom">
     <div class="h2">Legend</div>
     <div class="legend-row"><span class="dot low"></span> Low</div>
@@ -168,10 +172,13 @@ html, body { height:100%; margin:0; padding:0; overflow:hidden; }
     <div class="legend-row"><span class="dot elevated"></span> Elevated</div>
     <div class="legend-row"><span class="dot high"></span> High</div>
   </div>
+
 </div>
 
+<!-- BUTTON (CENTER TOP) -->
+<button id="toggleUI">Hide UI</button>
+
 <!-- MAP DIV -->
-    <button id="toggleUI">Hide UI</button>
 <div class="folium-map" id="map_ab459e368b79022add95f43adc28de68"></div>
 
 <script>
