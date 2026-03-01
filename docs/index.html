@@ -99,25 +99,56 @@
     </div>
     
     
-            <div class="folium-map" id="map_ab459e368b79022add95f43adc28de68" ></div>
-        
-</body>
-<script>
-    
-    
-            var map_ab459e368b79022add95f43adc28de68 = L.map(
-                "map_ab459e368b79022add95f43adc28de68",
-                {
-                    center: [33.4152, -111.8315],
-                    crs: L.CRS.EPSG3857,
-                    ...{
-  "zoom": 12,
-  "zoomControl": true,
-  "preferCanvas": false,
-}
+            <div id="ui">
+  <div class="panel panel-left-top">
+    <div class="panel-title">
+      <div class="brand-badge"></div>
+      <div>
+        <div class="h1">Mesa Pedestrian Risk Map</div>
+        <div class="sub">2020–2024 • Relative Risk Index (RRI)</div>
+      </div>
+    </div>
 
-                }
-            );
+    <div class="panel-body">
+      <p>
+        Identifies areas where pedestrian crashes are disproportionately concentrated relative to Mesa’s baseline.
+      </p>
+      <ul>
+        <li><b>RRI</b> = local crash rate ÷ citywide average</li>
+        <li><b>Red</b> = higher-than-average risk</li>
+        <li><b>Green</b> = lower-than-average risk</li>
+      </ul>
+      <div class="note">
+        Based on historical crash data (no exposure adjustment).
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-left-bottom">
+    <div class="h2">Legend</div>
+    <div class="legend-row"><span class="dot low"></span> Low</div>
+    <div class="legend-row"><span class="dot typical"></span> Typical</div>
+    <div class="legend-row"><span class="dot elevated"></span> Elevated</div>
+    <div class="legend-row"><span class="dot high"></span> High</div>
+  </div>
+</div>
+
+<!-- MAP DIV -->
+<div class="folium-map" id="map_ab459e368b79022add95f43adc28de68"></div>
+
+<script>
+var map_ab459e368b79022add95f43adc28de68 = L.map(
+    "map_ab459e368b79022add95f43adc28de68",
+    {
+        center: [33.4152, -111.8315],
+        crs: L.CRS.EPSG3857,
+        zoom: 12,
+        zoomControl: true,
+        preferCanvas: false,
+    }
+);
+
+// ALL your Leaflet code continues here...
 
             
 
@@ -7966,4 +7997,5 @@
             heat_map_c39cbeb1b19dcd544a97c01242982912.addTo(feature_group_227dbeed31518fcb399838625c144f4f);
         
 </script>
+</body>
 </html>
