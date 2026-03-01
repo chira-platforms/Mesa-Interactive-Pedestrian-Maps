@@ -161,11 +161,12 @@ var map_ab459e368b79022add95f43adc28de68 = L.map(
         center: [33.4152, -111.8315],
         crs: L.CRS.EPSG3857,
         zoom: 12,
-        zoomControl: true,
+        zoomControl: false,
         preferCanvas: false,
     }
 );
-
+L.control.zoom({ position: "bottomright" })
+  .addTo(map_ab459e368b79022add95f43adc28de68);
 // ALL your Leaflet code continues here...
 
             
