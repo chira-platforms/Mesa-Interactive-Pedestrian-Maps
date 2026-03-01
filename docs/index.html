@@ -45,9 +45,6 @@
   cursor: pointer;
 }
 
-#ui.hidden {
-  display: none;
-}
 .ui-panel.hidden {
   display: none;
 }
@@ -205,9 +202,8 @@ document.getElementById("toggleUI").onclick = function () {
     panel.classList.toggle("hidden");
   });
 
-  const isHidden = panels[0].classList.contains("hidden");
-
-  this.innerText = isHidden ? "Show UI" : "Hide UI";
+  this.innerText =
+    this.innerText === "Hide UI" ? "Show UI" : "Hide UI";
 };
             
 
